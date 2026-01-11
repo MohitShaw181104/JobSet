@@ -13,10 +13,12 @@ import { EmptyState } from "@/components/empty-state";
 import { useAgentFilters } from "../../hooks/use-agents-filters";
 // import { Button } from "@/components/ui/button";
 import { DataPagination } from "../components/data-pagination";
+import { useRouter } from "next/navigation";
+
 
 export const AgentsView = () => {
 
-
+    const router= useRouter();
     const[filters, setFilters]= useAgentFilters();
     const trpc = useTRPC();
     // const {data, isLoading , isError} = useQuery(trpc.agents.getMany.queryOptions());
@@ -55,7 +57,11 @@ export const AgentsView = () => {
                     </Button>
                 </ResponsiveDialog> */}
                 {/* {JSON.stringify(data)} */}
-                <DataTable data={data.items} columns={columns}/>
+                <DataTable 
+                    data={data.items} 
+                    columns={columns}
+                    onRowClick={(row) => router.push(`/agents/${row.id}`)}
+                />
                 <DataPagination
                     page={filters.page}
                     totalPages={data.totalPages}
