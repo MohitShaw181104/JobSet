@@ -92,7 +92,7 @@ export const AgentForm = ({
                     <FormItem>
                         <FormLabel>Name</FormLabel>
                         <FormControl>
-                            <Input {...field} placeholder="eg.Science Tutor" />
+                            <Input className="bg-white" {...field} placeholder="eg.Science Tutor" />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
@@ -105,7 +105,7 @@ export const AgentForm = ({
                     <FormItem>
                         <FormLabel>Instructions</FormLabel>
                         <FormControl>
-                            <Textarea {...field} placeholder="You are a helpful science assistant to help me with my Coaching work assignments." />
+                            <Textarea className="bg-white" {...field} placeholder="You are a helpful science assistant to help me with my Coaching work assignments." />
                         </FormControl>
                         <FormMessage/>
                     </FormItem>

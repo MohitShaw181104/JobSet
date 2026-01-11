@@ -20,7 +20,6 @@ export const AgentsListHeader = () => {
                     New Agent
                 </Button>
             </div>
-            List header
         </div>
         </>
     )
