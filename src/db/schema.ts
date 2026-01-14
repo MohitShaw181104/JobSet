@@ -1,4 +1,4 @@
-import { pgTable, text, timestamp, boolean, index, pgEnum } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, boolean, index, pgEnum, json } from "drizzle-orm/pg-core";
 import {nanoid} from "nanoid";
 
 
@@ -108,6 +108,13 @@ export const meetings = pgTable("meetings", {
     status: meetingStatus("status").notNull().default("upcoming"),
     startedAt: timestamp("started_at"),
     endedAt: timestamp("ended_at"),
+    transcript: json("transcript").$type<
+        {
+        start_ts: number;
+        text: string;
+        speaker_id: string;
+        }[]
+    >(),
     transcriptUrl: text("transcript_url"),
     recordingUrl: text("recording_url"),
     summary: text("summary"),
