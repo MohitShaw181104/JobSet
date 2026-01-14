@@ -9,8 +9,6 @@ import { GeneratedAvatar } from "@/components/generated-avatar";
 import { VideoIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useRouter } from "next/navigation";
-import { trpc } from "@/trpc/server";
-import { error } from "console";
 import { toast } from "sonner";
 import { useConfirm } from "@/hooks/use-confirm";
 import { useState } from "react";

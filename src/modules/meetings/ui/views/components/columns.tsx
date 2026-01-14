@@ -4,10 +4,9 @@ import { ColumnDef } from "@tanstack/react-table"
 import { MeetingGetMany } from "@/modules/meetings/types"
 import { GeneratedAvatar } from "@/components/generated-avatar"
 import { Badge} from "@/components/ui/badge"
-import { VideoIcon, CornerDownRightIcon, ClockArrowUpIcon, LoaderIcon, CircleCheckIcon, CircleXIcon, ClockFadingIcon } from "lucide-react"
+import { CornerDownRightIcon, ClockArrowUpIcon, LoaderIcon, CircleCheckIcon, CircleXIcon, ClockFadingIcon } from "lucide-react"
 import { format } from "date-fns"
 import { cn, formatDuration } from "@/lib/utils"
-import humanizeDuration from "humanize-duration"
 
 
     const statusIconMap ={

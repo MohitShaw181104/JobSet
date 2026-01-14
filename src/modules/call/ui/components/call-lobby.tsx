@@ -3,7 +3,6 @@ import { LogInIcon } from "lucide-react";
 import {
     DefaultVideoPlaceholder,
     StreamVideoParticipant,
-    ToggleAudioOutputButton,
     ToggleAudioPreviewButton,
     ToggleVideoPreviewButton,
     useCallStateHooks,
