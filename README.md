@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JobSet — AI-Powered SaaS Meeting & Agent Platform
 
-## Getting Started
+JobSet is a full-stack **AI-driven SaaS platform** designed to transform meetings from simple video calls into **structured, searchable, and intelligent knowledge assets**.
 
-First, run the development server:
+Instead of ending value when a meeting ends, JobSet captures conversations, processes them using AI, and enables users to revisit, search, summarize, and interact with meetings long after they are over.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The platform is built with a **production-first mindset**, focusing on scalability, type safety, background processing, and real-world SaaS requirements such as authentication, subscriptions, and clean developer workflows.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Platform Vision
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Most video conferencing tools stop at real-time communication.  
+JobSet goes beyond that.
 
-## Learn More
+The vision behind JobSet is to:
 
-To learn more about Next.js, take a look at the following resources:
+- Capture meetings in real time  
+- Process conversations asynchronously using AI  
+- Extract long-term value from discussions  
+- Allow users to **interact with meetings after they end**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Each meeting becomes a living resource — searchable, summarizable, and understandable by AI agents that retain full context of what was discussed.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Core Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Real-Time Meetings with AI Agents
+- Video meetings with integrated AI agents
+- Agents are context-aware and designed for extensibility
+- Supports future expansion to multiple agents per meeting
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### AI Transcripts & Summaries
+- Automatic transcript generation after meetings
+- AI-generated summaries highlighting key discussion points
+- Heavy processing handled in background jobs for performance
+
+### Post-Meeting Intelligence
+- Watch recorded meetings
+- Search across transcripts
+- Chat with an AI that understands the entire meeting context
+- Retrieve insights without rewatching full recordings
+
+### Authentication & Protected Access
+- Secure session-based authentication
+- Server-side route protection
+- Architecture ready for SaaS subscription gating
+
+### Background Job Architecture
+- AI workloads processed asynchronously
+- Reliable event-driven workflows using Inngest
+- Designed for scale and production usage
+
+---
+
+## What This Project Demonstrates
+
+JobSet is not a demo or toy project. It demonstrates how to build a **real SaaS product** using modern web technologies:
+
+- Scalable Next.js App Router architecture
+- Type-safe APIs using tRPC
+- Feature-based project structure
+- Background job handling for AI workloads
+- Clean separation of UI, business logic, and infrastructure
+- Real-world authentication and protected routes
+
+---
+
+## Technology Stack
+
+### Frontend
+- Next.js (App Router)
+- React.js
+- Tailwind CSS
+
+### Backend & Infrastructure
+- tRPC for type-safe APIs
+- PostgreSQL as the primary database
+- Drizzle ORM for schema management and migrations
+- Inngest for background jobs and event-driven workflows
+
+### AI Layer
+- AI agents for meeting analysis
+- Transcript generation
+- Context-aware AI chat for post-meeting interaction
+
+---
+
+## Project Structure
+
+```txt
+JobSet/
+├── src/
+│   ├── app/                    # Next.js App Router pages & layouts
+│   │   ├── (auth)/             # Authentication routes
+│   │   ├── meetings/           # Meeting-related routes and views
+│   │   ├── page.tsx            # Root route logic (redirects & auth)
+│   │   └── layout.tsx          # Global layout
+│   │
+│   ├── modules/                # Feature-based application modules
+│   │   ├── home/               # Dashboard & home logic
+│   │   ├── meetings/           # Meetings UI and business logic
+│   │   └── agents/             # AI agent functionality
+│   │
+│   ├── components/             # Reusable UI components
+│   │   ├── data-table.tsx
+│   │   ├── loading-state.tsx
+│   │   ├── empty-state.tsx
+│   │   └── error-state.tsx
+│   │
+│   ├── db/                     # Database layer
+│   │   ├── schema.ts           # Drizzle database schemas
+│   │   └── index.ts            # Database connection
+│   │
+│   ├── trpc/                   # tRPC client and server
+│   │   ├── server.ts
+│   │   ├── client.ts
+│   │   └── routers/            # API routers
+│   │
+│   ├── lib/                    # Shared utilities
+│   │   ├── auth.ts             # Authentication helpers
+│   │   └── utils.ts
+│   │
+│   └── styles/                 # Global styles
+│
+├── inngest/                    # Background job definitions
+├── public/                     # Static assets
+├── drizzle.config.ts           # Drizzle ORM configuration
+├── next.config.ts              # Next.js configuration
+├── tailwind.config.ts          # Tailwind CSS configuration
+├── package.json
+└── README.md
