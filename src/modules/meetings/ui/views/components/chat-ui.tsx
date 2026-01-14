@@ -27,7 +27,6 @@ import "stream-chat-react/dist/css/v2/index.css";
 
     export const ChatUI = ({
     meetingId,
-    meetingName,
     userId,
     userName,
     userImage,
